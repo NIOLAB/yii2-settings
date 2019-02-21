@@ -21,6 +21,7 @@ class m150227_114524_init extends Migration
         $this->createTable('{{%setting}}', [
             'id' => $this->primaryKey(),
             'type' => $this->string(10)->notNull(),
+            'input' => $this->string()->null(),
             'section' => $this->string()->notNull(),
             'key' => $this->string()->notNull(),
             'value' => $this->text()->null(),

@@ -6,6 +6,7 @@ use Yii;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\helpers\ArrayHelper;
+use yii\helpers\Json;
 use niolab\settings\models\enumerables\SettingStatus;
 use niolab\settings\models\enumerables\SettingType;
 
@@ -14,6 +15,7 @@ use niolab\settings\models\enumerables\SettingType;
  *
  * @property int $id
  * @property string $type
+ * @property string $input
  * @property string $section
  * @property string $key
  * @property string $value
@@ -41,7 +43,7 @@ class SettingModel extends ActiveRecord
             [['section', 'key'], 'required'],
             [['section', 'key'], 'unique', 'targetAttribute' => ['section', 'key']],
             [['value', 'type'], 'string'],
-            [['section', 'key', 'description'], 'string', 'max' => 255],
+            [['section', 'key', 'description','input'], 'string', 'max' => 255],
             [['status'], 'integer'],
             ['status', 'default', 'value' => SettingStatus::ACTIVE],
             ['status', 'in', 'range' => SettingStatus::getConstantsByName()],
@@ -148,17 +150,22 @@ class SettingModel extends ActiveRecord
 
         if (empty($model)) {
             $model = new static();
+            if ($type !== null && ArrayHelper::keyExists($type, SettingType::getConstantsByValue())) {
+                $model->type = $type;
+            } else {
+                $model->type = gettype($value);
+            }
         }
 
         $model->section = $section;
         $model->key = $key;
-        $model->value = strval($value);
-
-        if ($type !== null && ArrayHelper::keyExists($type, SettingType::getConstantsByValue())) {
-            $model->type = $type;
+        if ($model->type == SettingType::JSON_TYPE) {
+            $model->value = Json::encode($value);
         } else {
-            $model->type = gettype($value);
+            $model->value = strval($value);
         }
+
+
 
         return $model->save();
     }

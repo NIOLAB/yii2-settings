@@ -16,7 +16,7 @@ class SettingType extends BaseEnum
     const BOOLEAN_TYPE = 'boolean';
     const FLOAT_TYPE = 'float';
     const NULL_TYPE = 'null';
-    const WIDGET_TYPE = 'widget';
+    const JSON_TYPE = 'json';
 
     /**
      * @var string message category
@@ -32,6 +32,6 @@ class SettingType extends BaseEnum
         self::BOOLEAN_TYPE => 'Boolean',
         self::FLOAT_TYPE => 'Float',
         self::NULL_TYPE => 'Null',
-        self::WIDGET_TYPE => 'Widget',
+        self::JSON_TYPE => 'JSON',
     ];
 }

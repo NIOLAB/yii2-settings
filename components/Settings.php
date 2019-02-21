@@ -7,6 +7,7 @@ use yii\base\Component;
 use yii\caching\Cache;
 use yii\di\Instance;
 use yii\helpers\ArrayHelper;
+use yii\helpers\Json;
 use niolab\settings\models\enumerables\SettingType;
 
 /**
@@ -246,9 +247,8 @@ class Settings extends Component
      */
     protected function convertSettingType($type)
     {
-        if ($type === SettingType::WIDGET_TYPE) {
-            // nothing happens
-            return;
+        if ($type === SettingType::JSON_TYPE) {
+            $this->setting = Json::decode($this->setting);
         } if ($type === SettingType::BOOLEAN_TYPE) {
             $this->setting = filter_var($this->setting, FILTER_VALIDATE_BOOLEAN);
         } else {
