@@ -247,12 +247,9 @@ class Settings extends Component
      */
     protected function convertSettingType($type)
     {
-        var_dump(SettingType::JSON_TYPE);
-        var_dump($type);
-        exit;
         if ($type === SettingType::JSON_TYPE) {
             $this->setting = Json::decode($this->setting);
-        } if ($type === SettingType::BOOLEAN_TYPE) {
+        } elseif ($type === SettingType::BOOLEAN_TYPE) {
             $this->setting = filter_var($this->setting, FILTER_VALIDATE_BOOLEAN);
         } else {
             settype($this->setting, $type);
