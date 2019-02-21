@@ -246,7 +246,10 @@ class Settings extends Component
      */
     protected function convertSettingType($type)
     {
-        if ($type === SettingType::BOOLEAN_TYPE) {
+        if ($type === SettingType::WIDGET_TYPE) {
+            // nothing happens
+            return;
+        } if ($type === SettingType::BOOLEAN_TYPE) {
             $this->setting = filter_var($this->setting, FILTER_VALIDATE_BOOLEAN);
         } else {
             settype($this->setting, $type);

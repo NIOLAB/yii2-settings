@@ -18,16 +18,19 @@ class m150227_114524_init extends Migration
             $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
         }
 
-        $this->createTable('{{%Setting}}', [
+        $this->createTable('{{%setting}}', [
             'id' => $this->primaryKey(),
             'type' => $this->string(10)->notNull(),
             'section' => $this->string()->notNull(),
             'key' => $this->string()->notNull(),
-            'value' => $this->text()->notNull(),
+            'value' => $this->text()->null(),
             'status' => $this->smallInteger()->notNull()->defaultValue(1),
-            'createdAt' => $this->integer()->notNull(),
-            'updatedAt' => $this->integer()->notNull(),
+            'description' => $this->string(),
+            'created_at' => $this->integer()->notNull(),
+            'updated_at' => $this->integer()->notNull(),
         ], $tableOptions);
+
+        $this->createIndex('section_key','{{%setting}}',['section','key']);
     }
 
     /**

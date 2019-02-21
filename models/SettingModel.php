@@ -38,7 +38,7 @@ class SettingModel extends ActiveRecord
     public function rules(): array
     {
         return [
-            [['section', 'key', 'value'], 'required'],
+            [['section', 'key'], 'required'],
             [['section', 'key'], 'unique', 'targetAttribute' => ['section', 'key']],
             [['value', 'type'], 'string'],
             [['section', 'key', 'description'], 'string', 'max' => 255],
