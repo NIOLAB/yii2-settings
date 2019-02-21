@@ -20,13 +20,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```sh
-php composer.phar require --prefer-dist yii2mod/yii2-settings "*"
+php composer.phar require --prefer-dist niolab/yii2-settings "*"
 ```
 
 or add
 
 ```
-"yii2mod/yii2-settings": "*"
+"niolab/yii2-settings": "*"
 ```
 
 to the require section of your composer.json.
@@ -39,7 +39,7 @@ Configuration
 Before usage this extension, we'll also need to prepare the database.
 
 ```sh
-php yii migrate --migrationPath=@vendor/yii2mod/yii2-settings/migrations
+php yii migrate --migrationPath=@vendor/niolab/yii2-settings/migrations
 ```
 
 **Module Setup**
@@ -48,7 +48,7 @@ To access the module, you need to configure the modules array in your applicatio
 ```php
 'modules' => [
     'settings' => [
-        'class' => 'yii2mod\settings\Module',
+        'class' => 'niolab\settings\Module',
     ],
 ],
 ```
@@ -71,7 +71,7 @@ To use the Setting Component, you need to configure the components array in your
 ```php
 'components' => [
     'settings' => [
-        'class' => 'yii2mod\settings\components\Settings',
+        'class' => 'niolab\settings\components\Settings',
     ],
 ],
 ```
@@ -207,7 +207,7 @@ class SiteController extends Controller
     {
         return [
             'manage-settings' => [
-                'class' => \yii2mod\settings\actions\SettingsAction::class,
+                'class' => \niolab\settings\actions\SettingsAction::class,
                 // also you can use events as follows:
                 'on beforeSave' => function ($event) {
                     // your custom code
@@ -229,7 +229,7 @@ class SiteController extends Controller
 Internationalization
 ----------------------
 
-All text and messages introduced in this extension are translatable under category 'yii2mod.settings'.
+All text and messages introduced in this extension are translatable under category 'niolab.settings'.
 You may use translations provided within this extension, using following application configuration:
 
 ```php
@@ -237,9 +237,9 @@ return [
     'components' => [
         'i18n' => [
             'translations' => [
-                'yii2mod.settings' => [
+                'niolab.settings' => [
                     'class' => 'yii\i18n\PhpMessageSource',
-                    'basePath' => '@yii2mod/settings/messages',
+                    'basePath' => '@niolab/settings/messages',
                 ],
                 // ...
             ],
