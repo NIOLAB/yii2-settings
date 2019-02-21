@@ -1,16 +1,16 @@
 <?php
 
-namespace yii2mod\settings;
+namespace niolab\settings;
 
 /**
  * Class Module
  *
- * @package yii2mod\settings
+ * @package niolab\settings
  */
 class Module extends \yii\base\Module
 {
     /**
      * @var string the namespace that controller classes are in
      */
-    public $controllerNamespace = 'yii2mod\settings\controllers';
+    public $controllerNamespace = 'niolab\settings\controllers';
 }

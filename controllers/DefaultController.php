@@ -1,45 +1,45 @@
 <?php
 
-namespace yii2mod\settings\controllers;
+namespace niolab\settings\controllers;
 
 use Yii;
 use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii2mod\editable\EditableAction;
-use yii2mod\settings\models\SettingModel;
+use niolab\settings\models\SettingModel;
 
 /**
  * Class SettingController
  *
- * @package yii2mod\settings\controllers
+ * @package niolab\settings\controllers
  */
 class DefaultController extends Controller
 {
     /**
      * @var string path to index view file, which is used in admin panel
      */
-    public $indexView = '@vendor/yii2mod/yii2-settings/views/default/index';
+    public $indexView = '@vendor/niolab/yii2-settings/views/default/index';
 
     /**
      * @var string path to create view file, which is used in admin panel
      */
-    public $createView = '@vendor/yii2mod/yii2-settings/views/default/create';
+    public $createView = '@vendor/niolab/yii2-settings/views/default/create';
 
     /**
      * @var string path to update view file, which is used in admin panel
      */
-    public $updateView = '@vendor/yii2mod/yii2-settings/views/default/update';
+    public $updateView = '@vendor/niolab/yii2-settings/views/default/update';
 
     /**
      * @var string search class name for searching
      */
-    public $searchClass = 'yii2mod\settings\models\search\SettingSearch';
+    public $searchClass = 'niolab\settings\models\search\SettingSearch';
 
     /**
      * @var string model class name for CRUD operations
      */
-    public $modelClass = 'yii2mod\settings\models\SettingModel';
+    public $modelClass = 'niolab\settings\models\SettingModel';
 
     /**
      * Returns a list of behaviors that this component should behave as.
@@ -105,7 +105,7 @@ class DefaultController extends Controller
         $model = Yii::createObject($this->modelClass);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            Yii::$app->session->setFlash('success', Yii::t('yii2mod.settings', 'Setting has been created.'));
+            Yii::$app->session->setFlash('success', Yii::t('niolab.settings', 'Setting has been created.'));
 
             return $this->redirect(['index']);
         } else {
@@ -129,7 +129,7 @@ class DefaultController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            Yii::$app->session->setFlash('success', Yii::t('yii2mod.settings', 'Setting has been updated.'));
+            Yii::$app->session->setFlash('success', Yii::t('niolab.settings', 'Setting has been updated.'));
 
             return $this->redirect(['index']);
         } else {
@@ -151,7 +151,7 @@ class DefaultController extends Controller
     public function actionDelete(int $id)
     {
         $this->findModel($id)->delete();
-        Yii::$app->session->setFlash('success', Yii::t('yii2mod.settings', 'Setting has been deleted.'));
+        Yii::$app->session->setFlash('success', Yii::t('niolab.settings', 'Setting has been deleted.'));
 
         return $this->redirect(['index']);
     }
@@ -174,7 +174,7 @@ class DefaultController extends Controller
         if (($model = $settingModelClass::findOne($id)) !== null) {
             return $model;
         } else {
-            throw new NotFoundHttpException(Yii::t('yii2mod.settings', 'The requested page does not exist.'));
+            throw new NotFoundHttpException(Yii::t('niolab.settings', 'The requested page does not exist.'));
         }
     }
 }

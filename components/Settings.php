@@ -1,25 +1,25 @@
 <?php
 
-namespace yii2mod\settings\components;
+namespace niolab\settings\components;
 
 use Yii;
 use yii\base\Component;
 use yii\caching\Cache;
 use yii\di\Instance;
 use yii\helpers\ArrayHelper;
-use yii2mod\settings\models\enumerables\SettingType;
+use niolab\settings\models\enumerables\SettingType;
 
 /**
  * Class Settings
  *
- * @package yii2mod\settings\components
+ * @package niolab\settings\components
  */
 class Settings extends Component
 {
     /**
      * @var string setting model class name
      */
-    public $modelClass = 'yii2mod\settings\models\SettingModel';
+    public $modelClass = 'niolab\settings\models\SettingModel';
 
     /**
      * @var Cache|array|string the cache used to improve RBAC performance. This can be one of the followings:
@@ -35,10 +35,10 @@ class Settings extends Component
     /**
      * @var string the key used to store settings data in cache
      */
-    public $cacheKey = 'yii2mod-setting';
+    public $cacheKey = 'niolab-setting';
 
     /**
-     * @var \yii2mod\settings\models\SettingModel setting model
+     * @var \niolab\settings\models\SettingModel setting model
      */
     protected $model;
 

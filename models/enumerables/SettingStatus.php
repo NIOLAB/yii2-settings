@@ -1,13 +1,13 @@
 <?php
 
-namespace yii2mod\settings\models\enumerables;
+namespace niolab\settings\models\enumerables;
 
 use yii2mod\enum\helpers\BaseEnum;
 
 /**
  * Class SettingStatus
  *
- * @package yii2mod\settings\models\enumerables
+ * @package niolab\settings\models\enumerables
  */
 class SettingStatus extends BaseEnum
 {
@@ -17,7 +17,7 @@ class SettingStatus extends BaseEnum
     /**
      * @var string message category
      */
-    public static $messageCategory = 'yii2mod.settings';
+    public static $messageCategory = 'niolab.settings';
 
     /**
      * @var array

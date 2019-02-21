@@ -1,30 +1,30 @@
 <?php
 
-namespace yii2mod\settings\actions;
+namespace niolab\settings\actions;
 
 use Yii;
 use yii\base\Action;
 use yii\base\InvalidConfigException;
 use yii\base\Model;
 use yii\helpers\ArrayHelper;
-use yii2mod\settings\events\FormEvent;
+use niolab\settings\events\FormEvent;
 
 /**
  * Class SettingsAction
  *
- * @package yii2mod\settings\actions
+ * @package niolab\settings\actions
  */
 class SettingsAction extends Action
 {
     /**
      * Event is triggered before the settings will be saved.
-     * Triggered with \yii2mod\settings\events\FormEvent.
+     * Triggered with \niolab\settings\events\FormEvent.
      */
     const EVENT_BEFORE_SAVE = 'beforeSave';
 
     /**
      * Event is triggered after the settings have been saved successfully.
-     * Triggered with \yii2mod\settings\events\FormEvent.
+     * Triggered with \niolab\settings\events\FormEvent.
      */
     const EVENT_AFTER_SAVE = 'afterSave';
 

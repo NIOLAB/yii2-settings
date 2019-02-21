@@ -1,11 +1,11 @@
 <?php
 
-namespace yii2mod\settings\tests;
+namespace niolab\settings\tests;
 
 use Yii;
 use yii\helpers\ArrayHelper;
-use yii2mod\settings\tests\data\Controller;
-use yii2mod\settings\tests\data\Session;
+use niolab\settings\tests\data\Controller;
+use niolab\settings\tests\data\Session;
 
 /**
  * This is the base class for all yii framework unit tests.
@@ -51,16 +51,16 @@ class TestCase extends \PHPUnit\Framework\TestCase
                     'scriptUrl' => 'index.php',
                 ],
                 'settings' => [
-                    'class' => 'yii2mod\settings\components\Settings',
+                    'class' => 'niolab\settings\components\Settings',
                 ],
                 'cache' => [
                     'class' => 'yii\caching\ArrayCache',
                 ],
                 'i18n' => [
                     'translations' => [
-                        'yii2mod.settings' => [
+                        'niolab.settings' => [
                             'class' => 'yii\i18n\PhpMessageSource',
-                            'basePath' => '@yii2mod/settings/messages',
+                            'basePath' => '@niolab/settings/messages',
                         ],
                     ],
                 ],

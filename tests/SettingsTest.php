@@ -1,14 +1,14 @@
 <?php
 
-namespace yii2mod\settings\tests;
+namespace niolab\settings\tests;
 
 use Yii;
-use yii2mod\settings\models\enumerables\SettingType;
+use niolab\settings\models\enumerables\SettingType;
 
 /**
  * Class SettingsTest
  *
- * @package yii2mod\settings\tests
+ * @package niolab\settings\tests
  */
 class SettingsTest extends TestCase
 {

@@ -1,14 +1,14 @@
 <?php
 
-namespace yii2mod\settings\models;
+namespace niolab\settings\models;
 
 use yii\db\ActiveQuery;
-use yii2mod\settings\models\enumerables\SettingStatus;
+use niolab\settings\models\enumerables\SettingStatus;
 
 /**
  * Class SettingQuery
  *
- * @package yii2mod\settings\models
+ * @package niolab\settings\models
  */
 class SettingQuery extends ActiveQuery
 {

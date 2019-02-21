@@ -1,6 +1,6 @@
 <?php
 
-namespace yii2mod\settings\tests\data;
+namespace niolab\settings\tests\data;
 
 class Session extends \yii\web\Session
 {

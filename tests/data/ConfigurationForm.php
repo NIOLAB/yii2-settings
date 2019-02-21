@@ -1,6 +1,6 @@
 <?php
 
-namespace yii2mod\settings\tests\data;
+namespace niolab\settings\tests\data;
 
 use yii\base\Model;
 

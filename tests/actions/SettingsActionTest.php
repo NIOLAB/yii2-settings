@@ -1,12 +1,12 @@
 <?php
 
-namespace yii2mod\settings\tests\actions;
+namespace niolab\settings\tests\actions;
 
 use Yii;
 use yii\base\Model;
-use yii2mod\settings\actions\SettingsAction;
-use yii2mod\settings\tests\data\ConfigurationForm;
-use yii2mod\settings\tests\TestCase;
+use niolab\settings\actions\SettingsAction;
+use niolab\settings\tests\data\ConfigurationForm;
+use niolab\settings\tests\TestCase;
 
 class SettingsActionTest extends TestCase
 {

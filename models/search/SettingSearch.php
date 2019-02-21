@@ -1,14 +1,14 @@
 <?php
 
-namespace yii2mod\settings\models\search;
+namespace niolab\settings\models\search;
 
 use yii\data\ActiveDataProvider;
-use yii2mod\settings\models\SettingModel;
+use niolab\settings\models\SettingModel;
 
 /**
  * Class SettingSearch
  *
- * @package yii2mod\settings\models\search
+ * @package niolab\settings\models\search
  */
 class SettingSearch extends SettingModel
 {
